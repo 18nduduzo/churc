@@ -1,5 +1,5 @@
 <?php
-	$owner_email='nduduzohlophe84@gmail.com';
+	$owner_email='nduduzohlophe84@gmail';
 	//SMTP server settings	
 	$host = '';
     $port = '465';//"587";
