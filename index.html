@@ -39,16 +39,13 @@
     fx: 'mosaic'
   });
 
-  $("#owl").owlCarousel({
-    items : 3, //10 items above 1000px browser width
-    itemsDesktop : [995,1], //5 items between 1000px and 901px
-    itemsDesktopSmall : [767, 1], // betweem 900px and 601px
-    emsTablet: [700, 1], //2 items between 600 and 0
-    itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
-    navigation : true,
-    pagination :  false
+ $("#owl").owlCarousel({
+    items: function() {
+        return Math.min(3, Math.max(1, $(window).width() / 1000));
+    }
+});
   }); 
- }); 
+  
 </script>
 <!--[if lt IE 8]>
  <div style=' clear: both; text-align:center; position: relative;'>
