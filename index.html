@@ -39,10 +39,24 @@
     fx: 'mosaic'
   });
 
- $("#owl").owlCarousel({
-    items: function() {
-        return Math.min(3, Math.max(1, $(window).width() / 1000));
-    }
+ $("#owl").owlCarousel({    
+    items : 3, //10 items above 1000px browser width    
+    responsive:{
+        995:{
+            items:5
+        },
+        767:{
+            items:3
+        },
+        700:{
+            items:2
+        },
+        479:{
+            items:1
+        }
+    },
+    navigation : true,
+    pagination : false  
 });
   }); 
   
