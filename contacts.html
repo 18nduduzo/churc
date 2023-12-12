@@ -22,6 +22,22 @@
 <script src="js/modal.js"></script>
 
 <script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(window).bind("resize", resizeWindow);
+    function resizeWindow(e){
+      var newWindowWidth = $(window).width();
+
+      // If width width is below 600px, switch to the mobile stylesheet
+      if(newWindowWidth < 600){        $("link[rel=stylesheet]").attr({href : "mobile.css"});        }       // Else if width is above 600px, switch to the large stylesheet       else if(newWindowWidth > 600){
+        $("link[rel=stylesheet]").attr({href : "style.css"});
+      }
+    }
+  });
+</script>
+
  $(window).load(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
   $('#stuck_container').tmStickUp({});  
@@ -38,6 +54,7 @@
 <script src="js/html5shiv.js"></script>
 <link rel="stylesheet" media="screen" href="css/ie.css">
 <![endif]-->
+ 
 </head>
 
 <body class="" id="top">
